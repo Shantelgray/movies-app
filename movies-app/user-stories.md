@@ -1,106 +1,47 @@
-#MovieCard
-As a Movie Lover, I want to explore and manage movies in a digital collection.
+Movie Recommendations:
 
-Feature 1: Enter the Collection
+As a movie fan, I want to discover and manage a personalized collection of recommended films.
 
-User Story:
-Upon launching the app, I want to access the movie collection by clicking a button on the homepage to view a display of movie posters.
+Feature 1: Enter in to the Movie Collection
+User Story: When I open the app, I want to click a button on the homepage that shows me a gallery of movie posters. Then, when I click on a movie, the poster flips to reveal a brief description on the back.
+Details:
+
+1.  Implement a homepage displaying the app title and images
+2.  Clicking the button navigates users to the Movie App page, exploring the movie recommedation collection.
+
+Feature 2: Displaying the Collection and the NavBar
+User Story: Clicking on an Movie Card, I expect to navigate to a detailed view showing its description, year, image and genre of the movie.
+
+Details: 1. Implement Movie Card displaying each piece with details such as the Movie Name and Movie Title. 2. Fetch data from a local server to populate cards using components like MovieCard and MovieList. 3. Use useState and useEffect hooks for state management. 4. Implement a NavBar with links to Movie , FavoritePage, RatingsPage, and GenrePage using React Router for smooth navigation.
+
+Feature 3: Movie Card Details
+User Story: Click on the Movie Card to flip so that user can see the description, year, image, and genre of the movie.
 
 Details:
 
-    Implement a homepage displaying the app title and MovieCards.
+1. Use React Router to dynamically render the MoviePage based on Movie ID, displaying information sourced from the Movies data.
 
-    Clicking the button navigates users to the MovieApp page, enabling seamless exploration of the movie collection.
+Feature 4: Sort Movie Collection
+User Story: on the MoviePage showuld sort through the genre and the year.
 
-Feature 2: Display the Collection and NavBar
-
-User Story:
-Once on the MovieApp page, I want to view movie cards and navigate using a NavBar.
-
-Details:
-
-    Implement movie cards displaying each movie with details such as the title, description, and year.
-
-    Fetch data from a local server to populate cards using components like MovieCard and MovieList.
-
-    Use React hooks like useState and useEffect for state management.
-
-    Implement a NavBar with links to MovieApp, Favorites, Ratings, and Watchlist pages using React Router for smooth navigation.
-
-Feature 3: Movie Details
-
-User Story:
-Clicking on a movie card, I want to navigate to a detailed view showing the movie’s synopsis, release year, image, genre, and rating.
-
-Details:
-
-    Use React Router to dynamically render the MovieDetailsPage based on the movie ID.
-
-    Display comprehensive movie information sourced from the movie data.
-
-Feature 4: Sort Collection
-
-User Story:
-On the MovieApp page, I want to sort movies by title, description, or release year.
-
-Details:
-
-    Implement sorting functionality using React state.
-
-    Provide intuitive UI controls like buttons or dropdowns to allow sorting by different criteria.
+Details: 1. Implement sorting functionality using useState. 2. Use intuitive UI controls like buttons or dropdowns to allow users to sort Movie based on different criteria.
 
 Feature 5: Search Collection
+User Story: On MoviePage, user are to explore by the title of the movie.
 
-User Story:
-On the MovieApp page, I want to search movies by title or rating.
+Details: 1. Implement search functionality using useState 2. Include user-friendly UI controls such as input fields and buttons to facilitate searching based on specified criteria.
 
-Details:
+Feature: 6: Manage Favortie, Rating, and Genre
+User Story: From the Movie page, I want to explore favorite, rating, and genres using the NavBar.
 
-    Implement search functionality using React state.
+Details: 1. Navigate to FavoritePage to explore artworks categorized by favorites. 2. Navigate to RatingPage to explore artworks categorized by ratings. 3. Navigate to GenrePage to explore artworks categorized by genres. 4. Display Movies using data fetched from the server.
 
-    Include user-friendly UI controls such as input fields and buttons for searching movies.
+Feature: Add New Artworks
+User Story: User to add a Movie to there movie collection
 
-Feature 6: Manage Favorites, Ratings, and Watchlist
+Details: 1. Implement a form modal with input fields matching the database structure. 2. Use a POST request to update the local server upon submission. 3. Ensure the new artwork appears on the MoviePage.
 
-User Story:
-From the NavBar, I want to explore and manage my favorite movies, ratings I’ve given, and my watchlist.
+Feature: Delete a Movie
+User Story: User to delete a movie from the movie collection.
 
-Details:
-
-    Create a FavoritesPage to display movies the user has marked as favorite.
-
-    Create a RatingsPage to show movies with user ratings and allow editing ratings.
-
-    Create a WatchlistPage for movies the user plans to watch.
-
-    Store and manage these lists locally or synced with a backend.
-
-    Fetch and display relevant movie data on each page.
-
-Feature 7: Add New Movies
-
-User Story:
-I want to add a new movie to my collection by filling out a form.
-
-Details:
-
-    Implement a form modal with input fields matching movie attributes.
-
-    Use a POST request to update the local server or database upon submission.
-
-    Ensure the new movie appears immediately on the MovieExhibit page.
-
-Feature 8: Delete Movies
-
-User Story:
-I want to delete movies from my collection if I no longer want them listed.
-
-Details:
-
-    Add delete buttons on movie cards or detail pages.
-
-    Confirm deletion to prevent accidental removals.
-
-    Remove the movie from the local server or database via DELETE request.
-
-    Update UI to reflect the removal instantly.
+Details: 1. Use a Delete request to update the local server upon submission. 2. Ensure that the Movie deletes off the MoviePage.
