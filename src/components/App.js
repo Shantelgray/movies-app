@@ -1,23 +1,22 @@
 import logo from "../logo.svg";
 import "../App.css";
-import MovieCollection from "../pages/MovIeCollection";
+import MovieCollection from "./MovieCollection";
+import NavBar from "./NavBar";
+import GenrePage from "../pages/GenrePage";
+import RatingPage from "../pages/RatingPage";
+import FavoritePage from "../pages/FavoritePage";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header className="NextUp Movies">
+        <NavBar />
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5jdg0b3DCFnG3LI7uCpyN5OpqDZ8QtHXBwg&s"
+          alt="logo"
+        />
+        <p>Recommendations</p>
+        <a></a>
         <MovieCollection />
       </header>
     </div>

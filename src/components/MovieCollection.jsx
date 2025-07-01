@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import MovieCard from "../components/MovieCard";
+import MovieCard from "./MovieCard";
 
 const MovieCollection = () => {
   const [movies, setMovies] = useState([]);
@@ -12,8 +12,8 @@ const MovieCollection = () => {
 
   return (
     <div className="movie-collection">
-      {movies.map((movie) => (
-        <MovieCard key={movie.id} movie={movie} />
+      {movies.map((movie, index) => (
+        <MovieCard key={index} movie={movie} />
       ))}
     </div>
   );
