@@ -18,8 +18,8 @@ const NavBar = () => {
       <Link to="/rating" onClick={handleToggleMenu}>
         Ratings
       </Link>
-      <Link to="/favorite" onClick={handleToggleMenu}>
-        Favorites
+      <Link to="/year" onClick={handleToggleMenu}>
+        Year
       </Link>
     </nav>
   );

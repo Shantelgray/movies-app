@@ -1,17 +1,17 @@
 import React from "react";
 
-const RatingPage = ({ movies }) => {
-  const sortedMovies = [...movies].sort((a, b) => b.rating - a.rating);
+const YearPage = ({ movies }) => {
+  const sortedMovies = [...movies].sort((a, b) => b.year - a.year);
 
   return (
     <div className="rating-page">
-      <h2>Movies Sorted by Rating (High to Low)</h2>
+      <h2>Movies Sorted by Year (Oldest to Newest)</h2>
       {sortedMovies.length > 0 && (
         <div className="movies-container">
           {sortedMovies.map((movie, index) => (
             <div key={index} className="movie-item">
               <h3>{movie.title}</h3>
-              <p>Rating: {movie.rating}</p>
+              <p>year: {movie.year}</p>
               <img
                 src={movie.image}
                 alt={movie.title}
@@ -25,4 +25,4 @@ const RatingPage = ({ movies }) => {
   );
 };
 
-export default RatingPage;
+export default YearPage;

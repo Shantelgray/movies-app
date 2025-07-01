@@ -5,7 +5,7 @@ import NavBar from "./NavBar";
 import GenrePage from "../pages/GenrePage";
 import { Routes, Route } from "react-router-dom";
 import RatingPage from "../pages/RatingPage";
-import FavoritePage from "../pages/FavoritePage";
+import YearPage from "../pages/YearPage";
 import { useState, useEffect } from "react";
 
 function App() {
@@ -29,8 +29,8 @@ function App() {
         <Routes>
           <Route path="/home" element={<MovieCollection movies={movies} />} />
           <Route path="/genre" element={<GenrePage movies={movies} />} />
-          <Route path="/rating" element={<>Rating</>} />
-          <Route path="/favorite" element={<>Favorites</>} />
+          <Route path="/rating" element={<RatingPage movies={movies} />} />
+          <Route path="/year" element={<YearPage movies={movies} />} />
           <Route path="*" element={<MovieCollection />} />
         </Routes>
       </header>
