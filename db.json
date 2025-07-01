@@ -1,0 +1,44 @@
+{
+  "movies": [
+    {
+      "name": "Hereditary",
+      "genre": "Horror",
+      "description": "A grieving family is haunted by tragic and disturbing occurrences that unravel dark secrets.",
+      "rating": 8.1,
+      "year": 2018,
+      "image": "https://m.media-amazon.com/images/M/MV5BNTEyZGQwODctYWJjZi00NjFmLTg3YmEtMzlhNjljOGZhMWMyXkEyXkFqcGc@._V1_.jpg"
+    },
+    {
+      "name": "The Babadook",
+      "genre": "Horror",
+      "description": "A single mother and her child fall into a deep well of paranoia when a sinister children's book mysteriously appears in their home.",
+      "rating": 6.8,
+      "year": 2014,
+      "image": "https://m.media-amazon.com/images/M/MV5BMTk0NzMzODc2NF5BMl5BanBnXkFtZTgwOTYzNTM1MzE@._V1_.jpg"
+    },
+    {
+      "name": "Get Out",
+      "genre": "Horror",
+      "description": "A young African-American visits his white girlfriend’s parents for the weekend and uncovers a disturbing secret.",
+      "rating": 7.7,
+      "year": 2017,
+      "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcToY_i19GpmQlegGceEXsZcVPTOmBA-S0cfAMj4HoH1NhKvewrO5YktFmKTSSsQfLXgB6bG4BpUyqz7BLEwpmBML65M4TnC2NxnFzssxNfm"
+    },
+    {
+      "name": "The Conjuring",
+      "genre": "Horror",
+      "description": "Paranormal investigators Ed and Lorraine Warren work to help a family terrorized by a dark presence in their farmhouse.",
+      "rating": 7.5,
+      "year": 2013,
+      "image": "data:image/webp;base64,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"
+    },
+    {
+      "name": "A Quiet Place",
+      "genre": "Horror",
+      "description": "In a post-apocalyptic world, a family is forced to live in silence while hiding from monsters with ultra-sensitive hearing.",
+      "rating": 7.5,
+      "year": 2018,
+      "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTCZhFJLkh4k41kX5guTTAz0VypjuZJ-6w2MCMfL5iKxJlZlOFlCWMRcvjJJhHfnI_4gnmUiehuG-Jk7eeSZm-2w4LAPxZHrn8uB7KnC335_g"
+    }
+  ]
+}
