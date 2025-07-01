@@ -6,8 +6,17 @@ import GenrePage from "../pages/GenrePage";
 import { Routes, Route } from "react-router-dom";
 import RatingPage from "../pages/RatingPage";
 import FavoritePage from "../pages/FavoritePage";
+import { useState, useEffect } from "react";
 
 function App() {
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3001/movies")
+      .then((res) => res.json())
+      .then(setMovies);
+  }, []);
+
   return (
     <div className="App">
       <header className="NextUp Movies">
@@ -18,10 +27,10 @@ function App() {
         />
         <p>Recommendations</p>
         <Routes>
-          <Route path="/genre" element={<>Genres</>} />
+          <Route path="/home" element={<MovieCollection movies={movies} />} />
+          <Route path="/genre" element={<GenrePage movies={movies} />} />
           <Route path="/rating" element={<>Rating</>} />
           <Route path="/favorite" element={<>Favorites</>} />
-          <Route path="/home" element={<MovieCollection />} />
           <Route path="*" element={<MovieCollection />} />
         </Routes>
       </header>
