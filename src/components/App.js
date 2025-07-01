@@ -3,6 +3,7 @@ import "../App.css";
 import MovieCollection from "./MovieCollection";
 import NavBar from "./NavBar";
 import GenrePage from "../pages/GenrePage";
+import { Routes, Route } from "react-router-dom";
 import RatingPage from "../pages/RatingPage";
 import FavoritePage from "../pages/FavoritePage";
 
@@ -16,8 +17,13 @@ function App() {
           alt="logo"
         />
         <p>Recommendations</p>
-        <a></a>
-        <MovieCollection />
+        <Routes>
+          <Route path="/genre" element={<>Genres</>} />
+          <Route path="/rating" element={<>Rating</>} />
+          <Route path="/favorite" element={<>Favorites</>} />
+          <Route path="/home" element={<MovieCollection />} />
+          <Route path="*" element={<MovieCollection />} />
+        </Routes>
       </header>
     </div>
   );

@@ -9,6 +9,9 @@ const NavBar = () => {
 
   return (
     <nav>
+      <Link to="/home" onClick={handleToggleMenu}>
+        Home
+      </Link>
       <Link to="/genre" onClick={handleToggleMenu}>
         Genres
       </Link>
