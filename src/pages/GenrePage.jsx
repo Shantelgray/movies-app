@@ -1,16 +1,17 @@
 import React, { useState } from "react";
-
-const genres = [
-  "Comedy",
-  "Horror",
-  "Thriller",
-  "Adventure",
-  "Action",
-  "Sci-Fi",
-  "Fantasy",
-];
+import MovieCard from "../components/MovieCard";
 
 const GenrePage = ({ movies }) => {
+  const genres = [
+    "Comedy",
+    "Horror",
+    "Thriller",
+    "Adventure",
+    "Action",
+    "Sci-Fi",
+    "Fantasy",
+  ];
+
   const [selectedGenre, setSelectedGenre] = useState(null);
 
   const filteredMovies = selectedGenre
@@ -38,14 +39,7 @@ const GenrePage = ({ movies }) => {
           {filteredMovies.length > 0 ? (
             <div className="movies-container">
               {filteredMovies.map((movie) => (
-                <div key={movie.id} className="movie-item">
-                  <h4>{movie.title}</h4>
-                  <img
-                    src={movie.image || movie.poster}
-                    alt={movie.title}
-                    style={{ width: "150px", height: "auto" }}
-                  />
-                </div>
+                <MovieCard movie={movie} />
               ))}
             </div>
           ) : (

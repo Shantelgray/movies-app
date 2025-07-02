@@ -7,9 +7,14 @@ import { Routes, Route } from "react-router-dom";
 import RatingPage from "../pages/RatingPage";
 import YearPage from "../pages/YearPage";
 import { useState, useEffect } from "react";
+import MovieForm from "./MovieForm";
 
 function App() {
   const [movies, setMovies] = useState([]);
+
+  function addNewMovie(newMovie) {
+    setMovies((prevMovies) => [...prevMovies, newMovie]);
+  }
 
   useEffect(() => {
     fetch("http://localhost:3001/movies")
@@ -20,11 +25,10 @@ function App() {
   return (
     <div className="App">
       <header className="NextUp Movies">
+        <div className="form-container">
+          <MovieForm addNewMovie={addNewMovie} />
+        </div>
         <NavBar />
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5jdg0b3DCFnG3LI7uCpyN5OpqDZ8QtHXBwg&s"
-          alt="logo"
-        />
         <p>Recommendations</p>
         <Routes>
           <Route path="/home" element={<MovieCollection movies={movies} />} />

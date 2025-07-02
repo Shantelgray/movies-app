@@ -1,4 +1,5 @@
 import React from "react";
+import MovieCard from "../components/MovieCard";
 
 const RatingPage = ({ movies }) => {
   const sortedMovies = [...movies].sort((a, b) => b.rating - a.rating);
@@ -9,15 +10,7 @@ const RatingPage = ({ movies }) => {
       {sortedMovies.length > 0 && (
         <div className="movies-container">
           {sortedMovies.map((movie, index) => (
-            <div key={index} className="movie-item">
-              <h3>{movie.title}</h3>
-              <p>Rating: {movie.rating}</p>
-              <img
-                src={movie.image}
-                alt={movie.title}
-                style={{ width: "150px", height: "auto" }}
-              />
-            </div>
+            <MovieCard movie={movie} />
           ))}
         </div>
       )}

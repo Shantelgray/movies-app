@@ -4,8 +4,8 @@ import MovieCard from "./MovieCard";
 const MovieCollection = ({ movies }) => {
   return (
     <div className="movie-collection">
-      {movies.map((movie) => (
-        <MovieCard key={movie.id} movie={movie} />
+      {movies.map((movie, index) => (
+        <MovieCard key={movie.index} movie={movie} />
       ))}
     </div>
   );
