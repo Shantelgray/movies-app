@@ -10,6 +10,9 @@ const GenrePage = ({ movies }) => {
     "Action",
     "Sci-Fi",
     "Fantasy",
+    "Animation",
+    "Romance",
+    "Crime",
   ];
 
   const [selectedGenre, setSelectedGenre] = useState(null);
@@ -39,7 +42,7 @@ const GenrePage = ({ movies }) => {
           {filteredMovies.length > 0 ? (
             <div className="movies-container">
               {filteredMovies.map((movie) => (
-                <MovieCard movie={movie} />
+                <MovieCard key={movie.id} movie={movie} />
               ))}
             </div>
           ) : (

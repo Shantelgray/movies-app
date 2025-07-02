@@ -9,7 +9,7 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="navbar-horizontal">
+    <nav className="navbar-vertical">
       <Link
         to="/home"
         className="nav-link active"
