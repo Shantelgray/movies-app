@@ -11,7 +11,7 @@ const NavBar = () => {
   return (
     <nav className="navbar-vertical">
       <Link
-        to="/home"
+        to="/"
         className="nav-link active"
         aria-current="page"
         onClick={handleToggleMenu}

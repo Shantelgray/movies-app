@@ -10,7 +10,7 @@ const YearPage = ({ movies }) => {
       {sortedMovies.length > 0 && (
         <div className="movies-container">
           {sortedMovies.map((movie) => (
-            <MovieCard movie={movie} />
+            <MovieCard key={movie.id} movie={movie} />
           ))}
         </div>
       )}

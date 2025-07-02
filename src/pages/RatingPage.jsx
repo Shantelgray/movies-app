@@ -9,8 +9,8 @@ const RatingPage = ({ movies }) => {
       <h2>Movies Sorted by Rating (High to Low)</h2>
       {sortedMovies.length > 0 && (
         <div className="movies-container">
-          {sortedMovies.map((movie, index) => (
-            <MovieCard movie={movie} />
+          {sortedMovies.map((movie) => (
+            <MovieCard key={movie.id} movie={movie} />
           ))}
         </div>
       )}

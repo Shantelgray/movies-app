@@ -7,7 +7,7 @@ import { Routes, Route } from "react-router-dom";
 import RatingPage from "../pages/RatingPage";
 import YearPage from "../pages/YearPage";
 import { useState, useEffect } from "react";
-import MovieForm from "./MovieForm";
+
 import Home from "../pages/Home";
 
 function App() {
@@ -26,16 +26,13 @@ function App() {
   return (
     <div className="App">
       <header className="NextUp Movies">
-        <div className="form-container">
-          <Home />
-        </div>
         <NavBar />
         <p>Recommendations</p>
         <Routes>
-          <Route path="/" element={<MovieCollection movies={movies} />} />
           <Route path="/genre" element={<GenrePage movies={movies} />} />
           <Route path="/rating" element={<RatingPage movies={movies} />} />
           <Route path="/year" element={<YearPage movies={movies} />} />
+          <Route path="/" element={<Home addNewMovie={addNewMovie} />} />
           <Route path="*" element={<MovieCollection />} />
         </Routes>
       </header>
