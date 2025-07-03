@@ -8,11 +8,8 @@ const GenrePage = ({ movies }) => {
     "Thriller",
     "Adventure",
     "Action",
-    "Sci-Fi",
-    "Fantasy",
     "Animation",
     "Romance",
-    "Crime",
   ];
 
   const [selectedGenre, setSelectedGenre] = useState(null);
