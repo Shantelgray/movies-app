@@ -1,12 +1,12 @@
 import React from "react";
 import MovieCard from "../components/MovieCard";
 
-const RatingPage = ({ movies }) => {
-  const sortedMovies = [...movies].sort((a, b) => b.rating - a.rating);
+const YearPage = ({ movies }) => {
+  const sortedMovies = [...movies].sort((a, b) => b.year - a.year);
 
   return (
     <div className="rating-page">
-      <h2>Movies Sorted by Rating (High to Low)</h2>
+      <h2>Movies Sorted by Year (Oldest to Newest)</h2>
       {sortedMovies.length > 0 && (
         <div className="movie-container">
           {sortedMovies.map((movie) => (
@@ -18,4 +18,4 @@ const RatingPage = ({ movies }) => {
   );
 };
 
-export default RatingPage;
+export default YearPage;

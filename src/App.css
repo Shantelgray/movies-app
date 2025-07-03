@@ -1,3 +1,28 @@
+html {
+  background: url("https://wallpapers.com/images/hd/blue-galaxy-background-rbsj5sbkkrv1dc6h.jpg")
+    no-repeat center center fixed;
+  background-size: cover;
+  background-color: black;
+}
+body {
+  background: transparent;
+  background-size: cover;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  min-height: 100%;
+  background-image: url("https://wallpapers.com/images/hd/blue-galaxy-background-rbsj5sbkkrv1dc6h.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+  background-attachment: fixed;
+}
 .App {
   text-align: center;
 }
@@ -14,14 +39,14 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: transparent;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: transparent;
 }
 
 .App-link {
@@ -35,4 +60,120 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.navbar-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 200px;
+  background-color: transparent;
+  padding: 20px;
+  border-right: none;
+  overflow-y: auto;
+}
+.nav-link {
+  margin-bottom: 2rem;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-link:last-child {
+  margin-right: 0;
+}
+.form-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  width: 360px;
+  max-width: 95%;
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 24px;
+  border-radius: 10px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-sizing: border-box;
+}
+
+.form-container input,
+.form-container select,
+.form-container button {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.form-container button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form-container button:hover {
+  background-color: #0056b3;
+}
+.movies-container {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.movie-item {
+  flex: 0 0 auto;
+  width: 200px;
+}
+.movies-container::-webkit-scrollbar {
+  display: none;
+}
+@keyframes slideAcross {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+.neon-title {
+  font-family: "Pacifico", cursive;
+  font-size: 4rem;
+  color: #ff4ec6;
+  text-align: center;
+  margin: 20px 0;
+  text-shadow: 0 0 5px #ff4ec6, 0 0 10px #ff4ec6, 0 0 20px #ff4ec6,
+    0 0 40px #ff00ff, 0 0 60px #ff00ff;
+  animation: slideAcross 2s ease-out forwards, flash 1.5s infinite alternate;
+}
+.movie-details {
+  color: white;
+}
+.genre-page h2,
+.genre-page h3,
+.genre-page p {
+  color: white;
+}
+.rating-page h2 {
+  color: white;
 }

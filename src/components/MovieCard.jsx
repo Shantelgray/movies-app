@@ -2,13 +2,18 @@ import React, { useState } from "react";
 
 function MovieCard({ movie }) {
   const [isToggled, setIsToggled] = useState(false);
+  function isMovieValid(movie) {
+    return movie !== undefined && movie !== null;
+  }
+  if (!isMovieValid(movie)) return null;
+
   const { name, genre, year, description, rating, image } = movie;
   const handleToggle = () => {
     setIsToggled(!isToggled);
   };
 
   return (
-    <div onClick={handleToggle}>
+    <div className="movie-details" onClick={handleToggle}>
       {isToggled ? (
         <div>
           <h3>{name}</h3>
