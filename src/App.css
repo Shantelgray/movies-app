@@ -169,3 +169,11 @@ body {
 .movie-details {
   color: white;
 }
+.genre-page h2,
+.genre-page h3,
+.genre-page p {
+  color: white;
+}
+.rating-page h2 {
+  color: white;
+}
