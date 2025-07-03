@@ -5,23 +5,32 @@ Follow the steps below to run the application locally:
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/
+git clone git@github.com:Shantelgray/movies-app.git
+```
 
-📂 Navigate to the Project Directory
+Navigate to the Project Directory
 
-cd react-project-art
+```bash
+cd movies-app
+```
 
 Install Dependencies
 
+```bash
 npm install
+```
 
 Start the JSON Server (Mock Backend)
 
+```bash
 npm run server
+```
 
 Start the React Application
 
+```bash
 npm start
+```
 
 Open in Browser
 
@@ -115,4 +124,3 @@ Visit: http://localhost:3000 to use the application.
 - Use Sort functionalities to display movies by genre or year.
 - Click on a movie to view more details including title, year, genre, rating, and description. Navigate back using the "Back" button.
 - Add new movies to the collection using the button on the Movie Collection page.
-```
