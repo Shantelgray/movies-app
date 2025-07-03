@@ -13,7 +13,7 @@ function MovieCard({ movie }) {
   };
 
   return (
-    <div className="movie-container" onClick={handleToggle}>
+    <div className="movie-details" onClick={handleToggle}>
       {isToggled ? (
         <div>
           <h3>{name}</h3>

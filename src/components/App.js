@@ -25,9 +25,9 @@ function App() {
 
   return (
     <div className="App">
+      <h1 className="neon-title">CineGalaxy</h1>
       <header className="NextUp Movies">
         <NavBar />
-        <p>CineGalaxy</p>
         <Routes>
           <Route path="/genre" element={<GenrePage movies={movies} />} />
           <Route path="/rating" element={<RatingPage movies={movies} />} />
