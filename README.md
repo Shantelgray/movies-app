@@ -1,70 +1,118 @@
-# Getting Started with Create React App
+## Getting Started
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Follow the steps below to run the application locally:
 
-## Available Scripts
+### Clone the Repository
 
-In the project directory, you can run:
+```bash
+git clone https://github.com/
 
-### `npm start`
+📂 Navigate to the Project Directory
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+cd react-project-art
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Install Dependencies
 
-### `npm test`
+npm install
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Start the JSON Server (Mock Backend)
 
-### `npm run build`
+npm run server
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Start the React Application
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+npm start
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Open in Browser
 
-### `npm run eject`
+Visit: http://localhost:3000 to use the application.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# CineGalaxy - Movie Recommendation App
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Project Overview
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**CineGalaxy** is a movie recommendation application where movie lovers can explore, manage, and personalize a collection of films. Users can flip through movie cards, view detailed descriptions, and sort or search through the gallery by genre, rating, or year.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 🚀 Features
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Feature 1: Enter into the Movie Collection
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**User Story**: When I open the app, I want to click a button on the homepage that shows me a gallery of movie posters. Then, when I click on a movie, the poster flips to reveal a brief description on the back.
 
-### Code Splitting
+- Homepage displays app title and movie images
+- Clicking a button navigates to the Movie Collection page
+- Clicking a poster flips it to reveal details
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+### Feature 2: Displaying the Collection and the NavBar
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+**User Story**: Clicking a Movie Card, I expect to view its description, year, image, and genre.
 
-### Making a Progressive Web App
+- Movie Cards show movie name and image
+- Data is fetched from a local server
+- Uses React components like `MovieCard` and `MovieList`
+- `useState` and `useEffect` manage state
+- NavBar includes links to Home, Favorites, Ratings, and Genres using React Router
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+### Feature 3: Movie Card Details
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+**User Story**: Click a Movie Card to flip and see more information.
 
-### Deployment
+- Flip animation reveals description, year, genre, and rating
+- Movie data sourced from local server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+### Feature 4: Sort Movie Collection
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**User Story**: Sort movies by genre or year.
+
+- Sorting logic implemented using `useState`
+- Users sort using buttons/dropdowns
+
+---
+
+### Feature 5: Search Collection
+
+**User Story**: Explore movies by title using search.
+
+- Implements search using `useState`
+- Input field and button for easy interaction
+
+---
+
+### Feature 6: Manage Favorites, Ratings, and Genre
+
+**User Story**: Navigate via NavBar to explore favorites, ratings, and genres.
+
+- `FavoritePage` for favorite movies
+- `RatingPage` to sort by rating
+- `GenrePage` to explore by genre
+- All views fetch from local server
+
+---
+
+### Feature 7: Add New Movies
+
+**User Story**: Add a new movie to the collection.
+
+- Form modal includes all movie fields
+- Submits data via `POST` request
+- Updates UI with new movie
+
+---
+
+## Usage
+
+- Explore the homepage to learn about the collection and click "Enter Collection" to view movies.
+- Navigate through different pages using the navigation bar (Movies, Favorites, Ratings, Genres).
+- Use Search functionalities on the Movie Collection page to find specific movies by title.
+- Use Sort functionalities to display movies by genre or year.
+- Click on a movie to view more details including title, year, genre, rating, and description. Navigate back using the "Back" button.
+- Add new movies to the collection using the button on the Movie Collection page.
+```
