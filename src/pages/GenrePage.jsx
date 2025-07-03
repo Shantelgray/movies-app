@@ -37,7 +37,7 @@ const GenrePage = ({ movies }) => {
         <>
           <h3>Movies in {selectedGenre} genre</h3>
           {filteredMovies.length > 0 ? (
-            <div className="movies-container">
+            <div className="movie-container">
               {filteredMovies.map((movie) => (
                 <MovieCard key={movie.id} movie={movie} />
               ))}

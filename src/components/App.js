@@ -27,7 +27,7 @@ function App() {
     <div className="App">
       <header className="NextUp Movies">
         <NavBar />
-        <p>Recommendations</p>
+        <p>CineGalaxy</p>
         <Routes>
           <Route path="/genre" element={<GenrePage movies={movies} />} />
           <Route path="/rating" element={<RatingPage movies={movies} />} />

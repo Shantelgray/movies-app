@@ -8,7 +8,7 @@ const YearPage = ({ movies }) => {
     <div className="rating-page">
       <h2>Movies Sorted by Year (Oldest to Newest)</h2>
       {sortedMovies.length > 0 && (
-        <div className="movies-container">
+        <div className="movie-container">
           {sortedMovies.map((movie) => (
             <MovieCard key={movie.id} movie={movie} />
           ))}
