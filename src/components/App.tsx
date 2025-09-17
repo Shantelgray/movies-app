@@ -7,13 +7,22 @@ import { Routes, Route } from "react-router-dom";
 import RatingPage from "../pages/RatingPage";
 import YearPage from "../pages/YearPage";
 import { useState, useEffect } from "react";
-
 import Home from "../pages/Home";
 
-function App() {
-  const [movies, setMovies] = useState([]);
+export interface Movie {
+  id: string;
+  genre: string;
+  rating: string;
+  year: string;
+  description: string;
+  title: string;
+  image: string;
+}
 
-  function addNewMovie(newMovie) {
+function App() {
+  const [movies, setMovies] = useState<Movie[]>([]);
+
+  function addNewMovie(newMovie: Movie) {
     setMovies((prevMovies) => [...prevMovies, newMovie]);
   }
 
@@ -22,6 +31,27 @@ function App() {
       .then((res) => res.json())
       .then(setMovies);
   }, []);
+
+  const moviesData: Movie[] = [
+    {
+      id: "1",
+      genre: "Action",
+      rating: "PG-13",
+      year: "2021",
+      description: "Explosive action movie",
+      title: "Scooby Doo",
+      image: "World",
+    },
+    {
+      id: "3",
+      genre: "Drama",
+      rating: "R",
+      year: "2020",
+      description: "Emotional story",
+      title: "Harry Potter",
+      image: "Hello",
+    },
+  ];
 
   return (
     <div className="App">
@@ -32,12 +62,14 @@ function App() {
           <Route path="/genre" element={<GenrePage movies={movies} />} />
           <Route path="/rating" element={<RatingPage movies={movies} />} />
           <Route path="/year" element={<YearPage movies={movies} />} />
-          <Route path="/" element={<Home addNewMovie={addNewMovie} />} />
-          <Route path="*" element={<MovieCollection />} />
+          <Route
+            path="/"
+            element={<Home addNewMovie={addNewMovie} movies={movies} />}
+          />
+          <Route path="*" element={<MovieCollection movies={movies} />} />
         </Routes>
       </header>
     </div>
   );
 }
-
 export default App;

@@ -87,9 +87,8 @@ body {
 }
 .form-container {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 20px;
+  right: 20px;
   z-index: 1000;
   width: 360px;
   max-width: 95%;
@@ -102,7 +101,6 @@ body {
   gap: 14px;
   box-sizing: border-box;
 }
-
 .form-container input,
 .form-container select,
 .form-container button {

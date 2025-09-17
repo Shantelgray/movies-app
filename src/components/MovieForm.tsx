@@ -1,8 +1,16 @@
 import React, { useState } from "react";
+import type { Movie } from "./App";
 
-function MovieForm({ addNewMovie }) {
+export interface MovieFormProps {
+  addNewMovie: (movie: Movie) => void;
+}
+
+const MovieForm: React.FC<MovieFormProps> = ({
+  addNewMovie,
+}: MovieFormProps) => {
   const [formData, setFormData] = useState({
-    name: "",
+    id: "",
+    title: "",
     genre: "",
     description: "",
     rating: "",
@@ -10,33 +18,24 @@ function MovieForm({ addNewMovie }) {
     image: "",
   });
 
-  const handleChange = ({ target: { value, name } }) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  function handleSubmit(event) {
-    event.preventDefault();
-
-    fetch("http://localhost:3001/movies", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    })
-      .then((response) => response.json())
-      .then((onNewMovie) => {
-        addNewMovie(onNewMovie);
-        setFormData({
-          name: "",
-          genre: "",
-          description: "",
-          rating: "",
-          year: "",
-          image: "",
-        });
-      });
-  }
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    addNewMovie(formData);
+    setFormData({
+      id: "",
+      title: "",
+      genre: "",
+      description: "",
+      rating: "",
+      year: "",
+      image: "",
+    });
+  };
 
   return (
     <div className="form-container">
@@ -45,25 +44,24 @@ function MovieForm({ addNewMovie }) {
         style={{ maxWidth: "400px", margin: "auto" }}
       >
         <h2>New Movie</h2>
-
-        <label htmlFor="name">Title:</label>
+        <label htmlFor="title">Title:</label>
         <input
           type="text"
-          name="name"
-          id="name"
-          value={formData.name}
+          name="title"
+          id="title"
+          value={formData.title}
           onChange={handleChange}
         />
         <br />
-
-        <label>Genre:</label>
-        <input
-          type="text"
-          name="genre"
-          value={formData.genre}
-          onChange={handleChange}
-        />
-        <br />
+        <div>
+          <label htmlFor="genre">Genre:</label>
+          <input
+            id="genre"
+            name="genre"
+            value={formData.genre}
+            onChange={handleChange}
+          />
+        </div>
         <label>Description:</label>
         <input
           type="text"
@@ -100,6 +98,5 @@ function MovieForm({ addNewMovie }) {
       </form>
     </div>
   );
-}
-
+};
 export default MovieForm;

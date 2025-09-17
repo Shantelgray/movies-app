@@ -1,13 +1,17 @@
 import React, { useState } from "react";
+import { Movie } from "./App";
 
-function MovieCard({ movie }) {
+interface MovieCardProps {
+  movie: Movie;
+}
+function MovieCard({ movie }: MovieCardProps) {
   const [isToggled, setIsToggled] = useState(false);
-  function isMovieValid(movie) {
+  function isMovieValid(movie: Movie) {
     return movie !== undefined && movie !== null;
   }
   if (!isMovieValid(movie)) return null;
 
-  const { name, genre, year, description, rating, image } = movie;
+  const { title, genre, year, description, rating, image } = movie;
   const handleToggle = () => {
     setIsToggled(!isToggled);
   };
@@ -16,7 +20,7 @@ function MovieCard({ movie }) {
     <div className="movie-details" onClick={handleToggle}>
       {isToggled ? (
         <div>
-          <h3>{name}</h3>
+          <h3>{title}</h3>
           <p>
             <strong>Genre:</strong> {genre}
           </p>
@@ -32,11 +36,10 @@ function MovieCard({ movie }) {
         </div>
       ) : (
         <div>
-          <img src={image} alt={name} width="200" height="300" />
+          <img src={image} alt={title} width="200" height="300" />
         </div>
       )}
     </div>
   );
 }
-
 export default MovieCard;
