@@ -7,13 +7,23 @@ import { Routes, Route } from "react-router-dom";
 import RatingPage from "../pages/RatingPage";
 import YearPage from "../pages/YearPage";
 import { useState, useEffect } from "react";
-
 import Home from "../pages/Home";
+import MovieForm from "./MovieForm";
+
+export interface Movie {
+  id: string;
+  title: string;
+  genre: string;
+  description: string;
+  image: string;
+  year: string;
+  rating: string;
+}
 
 function App() {
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState<Movie[]>([]);
 
-  function addNewMovie(newMovie) {
+  function addNewMovie(newMovie: Movie) {
     setMovies((prevMovies) => [...prevMovies, newMovie]);
   }
 
@@ -22,6 +32,27 @@ function App() {
       .then((res) => res.json())
       .then(setMovies);
   }, []);
+
+  const moviesData: Movie[] = [
+    {
+      id: "1",
+      title: "Scooby Doo",
+      genre: "Cartoon",
+      description: "Explosive action movie",
+      image: "Happy",
+      year: "1970",
+      rating: "10",
+    },
+    {
+      id: "3",
+      title: "Rush Hour",
+      genre: "Action",
+      description: "Emotional story",
+      image: "Hello",
+      year: "2000",
+      rating: "8",
+    },
+  ];
 
   return (
     <div className="App">
@@ -32,12 +63,18 @@ function App() {
           <Route path="/genre" element={<GenrePage movies={movies} />} />
           <Route path="/rating" element={<RatingPage movies={movies} />} />
           <Route path="/year" element={<YearPage movies={movies} />} />
-          <Route path="/" element={<Home addNewMovie={addNewMovie} />} />
-          <Route path="*" element={<MovieCollection />} />
+          <Route
+            path="/"
+            element={<Home addNewMovie={addNewMovie} movies={movies} />}
+          />
+          <Route
+            path="/new"
+            element={<MovieForm addNewMovie={addNewMovie} />}
+          />
+          <Route path="*" element={<MovieCollection movies={movies} />} />
         </Routes>
       </header>
     </div>
   );
 }
-
 export default App;

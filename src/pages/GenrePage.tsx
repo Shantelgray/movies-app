@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import MovieCard from "../components/MovieCard";
+import { Movie } from "../components/App";
 
-const GenrePage = ({ movies }) => {
+interface GenrePageProps {
+  movies: Movie[];
+}
+
+const GenrePage = ({ movies }: GenrePageProps) => {
   const genres = [
     "Comedy",
     "Horror",
@@ -12,7 +17,7 @@ const GenrePage = ({ movies }) => {
     "Romance",
   ];
 
-  const [selectedGenre, setSelectedGenre] = useState(null);
+  const [selectedGenre, setSelectedGenre] = useState<string | null>(null);
 
   const filteredMovies = selectedGenre
     ? movies.filter((movie) => movie.genre === selectedGenre)
@@ -28,7 +33,7 @@ const GenrePage = ({ movies }) => {
             style={{ marginRight: "10px" }}
             onClick={() => setSelectedGenre(genre)}
           >
-            {genre}
+            {genres}
           </button>
         ))}
       </div>
