@@ -8,15 +8,16 @@ import RatingPage from "../pages/RatingPage";
 import YearPage from "../pages/YearPage";
 import { useState, useEffect } from "react";
 import Home from "../pages/Home";
+import MovieForm from "./MovieForm";
 
 export interface Movie {
   id: string;
-  genre: string;
-  rating: string;
-  year: string;
-  description: string;
   title: string;
+  genre: string;
+  description: string;
   image: string;
+  year: string;
+  rating: string;
 }
 
 function App() {
@@ -35,21 +36,21 @@ function App() {
   const moviesData: Movie[] = [
     {
       id: "1",
-      genre: "Action",
-      rating: "PG-13",
-      year: "2021",
-      description: "Explosive action movie",
       title: "Scooby Doo",
-      image: "World",
+      genre: "Cartoon",
+      description: "Explosive action movie",
+      image: "Happy",
+      year: "1970",
+      rating: "10",
     },
     {
       id: "3",
-      genre: "Drama",
-      rating: "R",
-      year: "2020",
+      title: "Rush Hour",
+      genre: "Action",
       description: "Emotional story",
-      title: "Harry Potter",
       image: "Hello",
+      year: "2000",
+      rating: "8",
     },
   ];
 
@@ -65,6 +66,10 @@ function App() {
           <Route
             path="/"
             element={<Home addNewMovie={addNewMovie} movies={movies} />}
+          />
+          <Route
+            path="/new"
+            element={<MovieForm addNewMovie={addNewMovie} />}
           />
           <Route path="*" element={<MovieCollection movies={movies} />} />
         </Routes>

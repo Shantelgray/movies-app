@@ -175,3 +175,11 @@ body {
 .rating-page h2 {
   color: white;
 }
+.form_control {
+  margin-bottom: 20px;
+}
+.error {
+  color: red;
+  font-size: 12px;
+  text-align: left;
+}
